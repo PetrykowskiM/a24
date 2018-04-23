@@ -6,7 +6,7 @@ type PropsType = {
   height: ?string,
   fillColor: ?string,
   position: ?string,
-  position: ?string
+  top: ?string
 };
 
 const Container = styled.div`

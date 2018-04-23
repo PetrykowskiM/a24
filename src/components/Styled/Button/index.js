@@ -1,9 +1,15 @@
+// @flow
 import styled from "styled-components";
+
+type PropsType = {
+  disabled: boolean
+};
 
 const Button = styled.div`
   border-radius: 4px;
   color: white;
-  background-color: ${props => (props.disabled ? "#717171" : "#4079d6af")};
+  background-color: ${(props: PropsType) =>
+    props.disabled ? "#717171" : "#4079d6af"};
   padding: 1em;
   display: inline-block;
   font-family: "Roboto", sans-serif;
@@ -12,7 +18,7 @@ const Button = styled.div`
   letter-spacing: 1px;
   box-shadow: 2px 2px 5px #243b61;
 
-  ${props =>
+  ${(props: PropsType) =>
     props.disabled
       ? ""
       : `&:hover {

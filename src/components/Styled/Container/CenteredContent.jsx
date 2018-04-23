@@ -1,3 +1,4 @@
+// @flow
 import styled from "styled-components";
 import { media } from "../mediaStyles";
 import Container from "./";
