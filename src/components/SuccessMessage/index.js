@@ -1,7 +1,11 @@
-import React from "react";
+// @flow
+import * as React from "react";
 import Tick from "./Tick.jsx";
 import Container from "../Styled/Container";
 import Label from "../Styled/Text/Label";
+
+type PropsType = {};
+type StateType = { ready: boolean };
 
 const CenteredContainer = Container.extend`
   position: absolute;
@@ -22,13 +26,16 @@ const TickContainer = Container.extend`
   transform: translateX(-50%);
 `;
 
-export default class SuccessMessage extends React.Component {
+class SuccessMessage extends React.Component<{}, PropsType, StateType> {
+  static defaultProps = {};
   state = { ready: false };
+
   componentDidMount() {
     setTimeout(() => {
       this.setState({ ready: true });
     }, 500);
   }
+
   render() {
     return (
       <CenteredContainer>
@@ -43,3 +50,5 @@ export default class SuccessMessage extends React.Component {
     );
   }
 }
+
+export default SuccessMessage;
