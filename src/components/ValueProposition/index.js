@@ -30,7 +30,7 @@ const MarginContainer = Container.extend`
   margin-bottom: 2.5em;
 `;
 
-export default class TopBar extends React.Component {
+export default class TopBar extends React.Component<{}> {
   render() {
     return (
       <LeftContainer>

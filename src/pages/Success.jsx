@@ -5,7 +5,7 @@ import Container from "../components/Styled/Container";
 import TopBar from "../components/TopBar";
 import SuccessMessage from "../components/SuccessMessage";
 
-class Success extends Component {
+class Success extends Component<{}> {
   render() {
     return (
       <Container>

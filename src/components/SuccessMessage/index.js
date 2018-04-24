@@ -26,8 +26,7 @@ const TickContainer = Container.extend`
   transform: translateX(-50%);
 `;
 
-class SuccessMessage extends React.Component<{}, PropsType, StateType> {
-  static defaultProps = {};
+class SuccessMessage extends React.Component<PropsType, StateType> {
   state = { ready: false };
 
   componentDidMount() {

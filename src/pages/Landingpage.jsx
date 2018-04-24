@@ -7,7 +7,7 @@ import TopBar from "../components/TopBar";
 import ValueProposition from "../components/ValueProposition";
 import backgroundImage from "../assets/images/background_1.jpg";
 
-class Landingpage extends Component {
+class Landingpage extends Component<{}> {
   render() {
     return (
       <Container>

@@ -22,9 +22,7 @@ type TopBarPropsType = {
   dark?: boolean
 };
 
-export default class TopBar extends React.Component<{}, TopBarPropsType, {}> {
-  static defaultProps = { dark: false };
-  state = {};
+export default class TopBar extends React.Component<TopBarPropsType, {}> {
   render() {
     return (
       <TopContainer dark={this.props.dark}>

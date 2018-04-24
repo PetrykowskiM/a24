@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { withRouter } from "react-router";
-import type { RouterHistory } from "../flow-typed/npm/react-router-dom_v4.x.x.js";
+import type { RouterHistory } from "react-router-dom";
 
 // Own Styled Components
 import TopBar from "../components/TopBar";
@@ -36,8 +36,7 @@ type StateType = {
   jobEnd: ?number
 };
 
-class Landingpage extends React.Component<{}, PropsType, StateType> {
-  static defaultProps = {};
+class Landingpage extends React.Component<PropsType, StateType> {
   state = {
     email: "",
     age: "",
