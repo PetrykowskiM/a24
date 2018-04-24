@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+// @flow
+import React from "react";
 import { withRouter } from "react-router";
+import type { RouterHistory } from "../flow-typed/npm/react-router-dom_v4.x.x.js";
 
+// Own Styled Components
 import TopBar from "../components/TopBar";
 import CenteredContainer from "../components/Styled/Container/CenteredContent";
 import Container from "../components/Styled/Container";
@@ -8,23 +11,33 @@ import Button from "../components/Styled/Button";
 import Title from "../components/Styled/Text/Title";
 import Label from "../components/Styled/Text/Label";
 
+// Material UI Components
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import TextField from "material-ui/TextField";
-
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
-
 import DatePicker from "material-ui/DatePicker";
 
 const MarginContainer = Container.extend`
   margin: 1rem 0;
 `;
 
-const PufferContainer = Container.extend`
-  height: 1rem;
-`;
+type PropsType = {
+  history: RouterHistory
+};
 
-class Landingpage extends Component {
+type StateType = {
+  email: string,
+  age: string,
+  zip: string,
+  salary: string,
+  companySize: string,
+  jobStart: ?number,
+  jobEnd: ?number
+};
+
+class Landingpage extends React.Component<{}, PropsType, StateType> {
+  static defaultProps = {};
   state = {
     email: "",
     age: "",
@@ -35,7 +48,7 @@ class Landingpage extends Component {
     jobEnd: null
   };
 
-  onChange(key, value) {
+  onChange(key: string, value: string) {
     this.setState({
       [key]: value
     });
@@ -142,7 +155,7 @@ class Landingpage extends Component {
             >
               Anspruch kostenfrei prüfen
             </Button>
-            <PufferContainer />
+            <br />
           </CenteredContainer>
         </MuiThemeProvider>
       </Container>
