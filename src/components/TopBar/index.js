@@ -5,7 +5,7 @@ import Label from "../Styled/Text/Label";
 import { Link } from "react-router-dom";
 
 type PropsType = {
-  dark: boolean
+  dark?: boolean
 };
 
 const TopContainer = Container.extend`
@@ -18,8 +18,12 @@ const TopContainer = Container.extend`
   background: ${(props: PropsType) => (props.dark ? "#4079d6e0" : "none")};
 `;
 
-export default class TopBar extends React.Component<{}, PropsType, {}> {
-  static defaultProps = {};
+type TopBarPropsType = {
+  dark?: boolean
+};
+
+export default class TopBar extends React.Component<{}, TopBarPropsType, {}> {
+  static defaultProps = { dark: false };
   state = {};
   render() {
     return (
